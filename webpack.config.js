@@ -128,6 +128,12 @@ module.exports = env => {
           from: "assets/images/*.{ico,png}"
         },
 
+        /* Copy language assets */
+        {
+          context: "src",
+          from: "language/*"
+        },
+
         /* Copy configuration */
         {
           context: "src",

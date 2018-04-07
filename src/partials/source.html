@@ -20,8 +20,6 @@
   IN THE SOFTWARE.
 -->
 
-{% import "partials/language.html" as lang with context %}
-
 <!--
   Check whether the repository is hosted on one of the supported code hosting
   platforms (GitHub, GitLab or Bitbucket) to show icon.
@@ -39,7 +37,7 @@
 
 <!-- Repository containing source -->
 {% block repo %}
-  <a href="{{ config.repo_url }}" title="{{ lang.t('source.link.title') }}"
+  <a href="{{ config.repo_url }}" title="{{ language['source.link.title'] }}"
       class="md-source" data-md-source="{{ repo_type }}">
     {% if repo_type %}
       <div class="md-source__icon">

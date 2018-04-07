@@ -20,8 +20,6 @@
   IN THE SOFTWARE.
 -->
 
-{% import "partials/language.html" as lang with context %}
-
 <!-- Application footer -->
 <footer class="md-footer">
 
@@ -44,7 +42,7 @@
                   md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
-                  {{ lang.t("footer.previous") }}
+                  {{ language["footer.previous"] }}
                 </span>
                 {{ page.previous_page.title }}
               </span>
@@ -61,7 +59,7 @@
                   md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
-                  {{ lang.t("footer.next") }}
+                  {{ language["footer.next"] }}
                 </span>
                 {{ page.next_page.title }}
               </span>
@@ -88,10 +86,10 @@
           </div>
         {% endif %}
         powered by
-        <a href="http://www.mkdocs.org">MkDocs</a>
+        <a href="http://www.docarys.io">docarys</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
-          Material for MkDocs</a>
+        <a href="https://github.com/docarys/docarys-material/">
+          Material for docarys</a>
       </div>
 
       <!-- Social links -->

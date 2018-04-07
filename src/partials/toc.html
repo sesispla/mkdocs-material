@@ -20,8 +20,6 @@
   IN THE SOFTWARE.
 -->
 
-{% import "partials/language.html" as lang with context %}
-
 <!-- Table of contents -->
 <nav class="md-nav md-nav--secondary">
   {% set toc_ = page.toc %}
@@ -32,13 +30,13 @@
     to the current page that is located just above the anchor. Therefore we
     directly continue with the children of the anchor.
   -->
-  {% if toc_ | first is defined and "\x3ch1 id=" in page.content %}
+  {% if toc_ | first and "\x3ch1 id=" in page.content %}
     {% set toc_ = (toc_ | first).children %}
   {% endif %}
 
   <!-- Render item list -->
-  {% if toc_ | first is defined %}
-    <label class="md-nav__title" for="toc">{{ lang.t("toc.title") }}</label>
+  {% if toc_ | first %}
+    <label class="md-nav__title" for="toc">{{ language["toc.title"] }}</label>
     <ul class="md-nav__list" data-md-scrollfix>
       {% for toc_item in toc_ %}
         {% include "partials/toc-item.html" %}
@@ -47,9 +45,9 @@
       <!-- Source files -->
       {% if page.meta.source and page.meta.source | length > 0 %}
         <li class="md-nav__item">
-          <a href="#__source" title="{{ lang.t('meta.source') }}"
+          <a href="#__source" title="{{ language['meta.source'] }}"
               class="md-nav__link md-nav__link--active">
-            {{ lang.t("meta.source") }}
+            {{ language["meta.source"] }}
           </a>
         </li>
       {% endif %}
@@ -63,9 +61,9 @@
       <!-- Disqus integration -->
       {% if not page.is_homepage and disqus %}
         <li class="md-nav__item">
-          <a href="#__comments" title="{{ lang.t('meta.comments') }}"
+          <a href="#__comments" title="{{ language['meta.comments'] }}"
               class="md-nav__link md-nav__link--active">
-            {{ lang.t("meta.comments") }}
+            {{ language["meta.comments"] }}
           </a>
         </li>
       {% endif %}

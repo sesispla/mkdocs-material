@@ -1,4 +1,3 @@
-{% import "partials/language.html" as lang with context %}
 <footer class="md-footer">
   {% if page.previous_page or page.next_page %}
     <div class="md-footer-nav">
@@ -11,7 +10,7 @@
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
-                  {{ lang.t("footer.previous") }}
+                  {{ language["footer.previous"] }}
                 </span>
                 {{ page.previous_page.title }}
               </span>
@@ -23,7 +22,7 @@
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
-                  {{ lang.t("footer.next") }}
+                  {{ language["footer.next"] }}
                 </span>
                 {{ page.next_page.title }}
               </span>
@@ -45,10 +44,10 @@
           </div>
         {% endif %}
         powered by
-        <a href="http://www.mkdocs.org">MkDocs</a>
+        <a href="http://www.docarys.io">docarys</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
-          Material for MkDocs</a>
+        <a href="https://github.com/docarys/docarys-material/">
+          Material for docarys</a>
       </div>
       {% block social %}
         {% include "partials/social.html" %}
