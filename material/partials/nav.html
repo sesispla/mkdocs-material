@@ -3,10 +3,10 @@
     <span class="md-nav__button md-logo">
       {% if config.theme.logo.icon %}
         <i class="md-icon">{{ config.theme.logo.icon }}</i>
-      {% elif config.theme.logo and config.theme.logo.startsWith("http") %}
-        <img src="{{ config.theme.logo }}" width="48" height="48">
+      {% elif config.theme.logo and config.theme.logo.source.startsWith("http") %}
+        <img src="{{ config.theme.logo.source }}" width="{{ config.theme.logo.width }}">
       {% else %}
-        <img src="{{ base_url }}/{{ config.theme.logo }}" width="48" height="48">
+        <img src="{{ base_url }}/{{ config.theme.logo.source }}" width="{{ config.theme.logo.width }}">
       {% endif %}
     </span>
     {{ config.site_name }}

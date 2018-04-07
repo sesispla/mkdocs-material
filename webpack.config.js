@@ -137,7 +137,7 @@ module.exports = env => {
         /* Copy configuration */
         {
           context: "src",
-          from: "**/*.{py,yml}"
+          from: "**/*.{yml}"
         },
 
         /* Copy and minify HTML */
